@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ShowsCountComponent } from './components/shows-count/shows-count.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShowsCountComponent
   ],
   imports: [
     BrowserModule

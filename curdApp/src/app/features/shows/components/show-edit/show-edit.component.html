@@ -1,0 +1,18 @@
+<h1>
+  Edit {{ show. name }}
+</h1>
+<form [formGroup]="showForm" (ngSubmit)="save()">
+  <input type="text" formControlName="name" />
+  <div>
+    <div *ngFor="let error of getError('runtime')" style="color: red">
+  </div>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Form Value</th>
+      <th>Form Value</th>
+    </tr>
+  </thead>
+</table>
