@@ -1,11 +1,34 @@
+<button (click)="deleteShow()">Delete Show</button>
 <h1>
   Edit {{ show. name }}
 </h1>
 <form [formGroup]="showForm" (ngSubmit)="save()">
-  <input type="text" formControlName="name" />
+  <div>
+    <input type="text" formControlName="name" placeholder="Name" />
+  </div>
+  <div>
+    <input type="text" formControlName="url" placeholder="Url" />
+  </div>
+  <div>
+    <input type="text" formControlName="language" placeholder="Language" />
+  </div>
+  <div>
+    <input type="number" formControlName="runtime" placeholder="Runtime" />
+  </div>
   <div>
     <div *ngFor="let error of getError('runtime')" style="color: red">
+      {{error}}
+    </div>
   </div>
+  <div>
+    <textarea col="70" formControlName="summary"></textarea>
+  </div>
+  <div formGroupName="image">
+    <h2>Image details</h2>
+    <div><input type="url" formControlName="medium" /></div>
+    <div><input type="url" formControlName="original" /></div>
+  </div>
+  <input type="submit" [disabled]="showForm.invalid" />
 </form>
 
 <table>
@@ -15,4 +38,16 @@
       <th>Form Value</th>
     </tr>
   </thead>
+  <tbody>
+    <tr>
+      <td>
+        <pre>{{showForm?.value | json}}</pre>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <pre>{{show | json}}</pre>
+      </td>
+    </tr>
+  </tbody>
 </table>

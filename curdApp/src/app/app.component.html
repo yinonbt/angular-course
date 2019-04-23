@@ -1,5 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>    Shows Count: {{}}  </h1>
-</div>
+<h2>Shows count: {{count$ | async}}</h2>
+<hr>
+<button (click)="changeVisible()">Show count component</button>
+<app-shows-count *ngIf="isShowCountVisible"></app-shows-count>
+<hr>
 <app-shows-root></app-shows-root>

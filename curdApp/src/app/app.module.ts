@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ShowsCountComponent } from './components/shows-count/shows-count.component';
+import { ShowsRootComponent } from './features/shows/components/shows-root/shows-root.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShowsModule } from './features/shows/shows.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +14,10 @@ import { ShowsCountComponent } from './components/shows-count/shows-count.compon
     ShowsCountComponent
   ],
   imports: [
-    BrowserModule
+    HttpClientModule,
+    BrowserModule,
+    ShowsModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
