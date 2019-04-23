@@ -1,7 +1,20 @@
-import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  EventEmitter,
+  Output
+} from '@angular/core';
 import { Show } from '../../model/show';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { filter } from 'rxjs'
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl,
+  AbstractControl
+} from '@angular/forms';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-show-edit',
@@ -9,21 +22,20 @@ import { filter } from 'rxjs'
   styleUrls: ['./show-edit.component.scss']
 })
 export class ShowEditComponent implements OnInit, OnChanges {
-  @Input() 
+  @Input()
   show: Show;
 
   @Output()
-  saveRequested = new EventEmitter<Show>()
+  saveRequested = new EventEmitter<Show>();
+  @Output()
+  deleteRequested = new EventEmitter<Show>();
 
   showForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private formBuilder: FormBuilder) {}
 
-  }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  isEven(c: FormControl) {
+  isEven(c: AbstractControl) {
     const value = c.value;
     if (!isNaN(value) && value % 2 === 0) {
       return null;
@@ -32,19 +44,45 @@ export class ShowEditComponent implements OnInit, OnChanges {
       isEven: { currentValue: c.value }
     };
   }
+
+  deleteShow() {
+    this.deleteRequested.emit(this.show);
+  }
   save() {
-    this.show = this.showForm.value;
+    if (this.showForm.valid) {
+      this.saveRequested.emit(this.showForm.value);
+    }
   }
 
   getError(fieldName: string) {
-
+    if (this.showForm.controls[fieldName].errors) {
+      return Object.keys(this.showForm.controls[fieldName].errors);
+    }
+    return [];
   }
+
   ngOnChanges() {
-    this.showForm = this.fb.group({
+    this.showForm = this.formBuilder.group({
       id: [this.show.id],
       name: [this.show.name, Validators.required],
-      language:
-        runtime: [this.show.runtime, Validators.compose([this.isEven, Validators.required, Validators.min(30)])]
-    }, validators: [this.validateForm], updateOn: 'change')
+      language: [this.show.language, Validators.required],
+      url: [this.show.url, Validators.required],
+      weight: [this.show.weight, Validators.required],
+      webChannel: [this.show.webChannel],
+      officialSite: [this.show.officialSite, Validators.required],
+      runtime: [
+        this.show.runtime,
+        Validators.compose([
+          c => this.isEven(c),
+          Validators.required,
+          Validators.min(30)
+        ])
+      ],
+      summary: [this.show.summary, Validators.required],
+      image: this.formBuilder.group({
+        medium: [this.show.image.medium],
+        original: [this.show.image.original]
+      })
+    });
   }
 }
