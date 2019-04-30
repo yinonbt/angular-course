@@ -21,6 +21,7 @@ export class ShowsListComponent implements OnChanges{
 
   @Output()
   selectShowRequested = new EventEmitter<Show>();
+  showSelected: Show;
 
   constructor() {
     // this.showsAfterFilter$ = this.searchTermChanged
@@ -42,6 +43,7 @@ export class ShowsListComponent implements OnChanges{
   }
 
   onSelected(s: Show) {
+    this.showSelected = s;
     this.selectShowRequested.emit(s);
   }
 }

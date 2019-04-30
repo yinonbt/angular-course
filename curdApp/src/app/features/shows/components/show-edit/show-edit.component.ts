@@ -48,6 +48,7 @@ export class ShowEditComponent implements OnInit, OnChanges {
   deleteShow() {
     this.deleteRequested.emit(this.show);
   }
+  
   save() {
     if (this.showForm.valid) {
       this.saveRequested.emit(this.showForm.value);

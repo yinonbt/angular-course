@@ -1,7 +1,8 @@
 <input type="search" #searchInput (input)="filterShows(searchInput.value)" />
 
 <div>
-  <div *ngFor="let show of showsAfterFilter" class="show" (click)="onSelected(show)">
+  <div *ngFor="let show of showsAfterFilter" class="show" (click)="onSelected(show)"
+    [ngClass]="{'show-selected':show.id === showSelected?.id}">
     <h3>
       {{show.name}}
     </h3>

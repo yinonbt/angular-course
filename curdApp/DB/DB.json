@@ -1,90 +1,90 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Bamba",
-        "price": 12.6
+  "products": [
+    {
+      "id": 1,
+      "name": "Bamba",
+      "price": 12.6
+    },
+    {
+      "id": 2,
+      "name": "Bisli",
+      "price": 10
+    },
+    {
+      "id": 3,
+      "name": "Kefli",
+      "price": 9.2
+    },
+    {
+      "id": 4,
+      "name": "Doritos",
+      "price": 2.6
+    }
+  ],
+  "shows": [
+    {
+      "id": 9,
+      "url": "http://www.tvmaze.com/shows/9/revenge",
+      "name": "Revenge",
+      "language": "English",
+      "status": "Ended",
+      "runtime": 60,
+      "premiered": "2011-09-21",
+      "officialSite": null,
+      "weight": 97,
+      "webChannel": null,
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/82/206879.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/82/206879.jpg"
       },
-      {
-        "id": 2,
-        "name": "Bisli",
-        "price": 10
-      },
-      {
-        "id": 3,
-        "name": "Kefli",
-        "price": 9.2
-      },
-      {
-        "id": 4,
-        "name": "Doritos",
-        "price": 2.6
+      "summary": "<p>This is not a story about forgiveness; <b>Revenge</b> is a show about retribution. Meet Emily Thorne, the newest resident of The Hamptons. When she was a little girl (and known as Amanda Clarke) her father, David Clarke, was framed for a horrific crime and subsequently sent to prison. While serving his time, the conspirators plotted and murdered David in order to prevent the truth from coming out. Emily is now back with a new identity and ready to take vengeance on the people that murdered her father and stole her childhood.</p>"
+    },
+    {
+      "id": 12,
+      "name": "Lost asd",
+      "language": "English",
+      "url": "http://www.tvmaze.com/shows/12/lost-girl",
+      "weight": "90",
+      "webChannel": null,
+      "officialSite": "http://www.showcase.ca/lostgirl",
+      "runtime": 60,
+      "summary": "<p><b>Lost Girl</b> follows supernatural seductress Bo, a Succubus who feeds on the sexual energy of humans. Growing up with human parents, Bo had no reason to believe she was anything other than the girl next door — until she drained her boyfriend to death in their first sexual encounter. Now she has hit the road alone and afraid. <br> She discovers she is one of the Fae, creatures of legend and folklore, who pass as humans while feeding off them secretly and in different ways, as they have for millennia. Relieved yet horrified to find out that she is not alone, Bo decides to take the middle path between the humans and the Fae while embarking on a personal mission to unlock the secrets of her origin.</p><p>With the help of her human sidekick, Kenzi, and Dyson, a sexy police detective, Bo takes on a challenge every week helping a Fae or human client who comes to her to solve a mystery, or to right a wrong.</p>",
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/137.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/137.jpg"
       }
-    ],
-    "shows": [
-      {
-        "id": 9,
-        "url": "http://www.tvmaze.com/shows/9/revenge",
-        "name": "Revenge",
-        "language": "English",
-        "status": "Ended",
-        "runtime": 60,
-        "premiered": "2011-09-21",
-        "officialSite": null,
-        "weight": 97,
-        "webChannel": null,
-        "image": {
-          "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/82/206879.jpg",
-          "original": "http://static.tvmaze.com/uploads/images/original_untouched/82/206879.jpg"
-        },
-        "summary": "<p>This is not a story about forgiveness; <b>Revenge</b> is a show about retribution. Meet Emily Thorne, the newest resident of The Hamptons. When she was a little girl (and known as Amanda Clarke) her father, David Clarke, was framed for a horrific crime and subsequently sent to prison. While serving his time, the conspirators plotted and murdered David in order to prevent the truth from coming out. Emily is now back with a new identity and ready to take vengeance on the people that murdered her father and stole her childhood.</p>"
+    },
+    {
+      "id": 14,
+      "url": "http://www.tvmaze.com/shows/14/continuum",
+      "name": "Continuum",
+      "language": "English",
+      "status": "Ended",
+      "runtime": 60,
+      "premiered": "2012-05-27",
+      "officialSite": "http://www.showcase.ca/Continuum",
+      "weight": 84,
+      "webChannel": null,
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/184.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/184.jpg"
       },
-      {
-        "id": 12,
-        "name": "Lost asd",
-        "language": "English",
-        "url": "http://www.tvmaze.com/shows/12/lost-girl",
-        "weight": 89,
-        "webChannel": null,
-        "officialSite": "http://www.showcase.ca/lostgirl",
-        "runtime": 60,
-        "summary": "<p><b>Lost Girl</b> follows supernatural seductress Bo, a Succubus who feeds on the sexual energy of humans. Growing up with human parents, Bo had no reason to believe she was anything other than the girl next door — until she drained her boyfriend to death in their first sexual encounter. Now she has hit the road alone and afraid. <br> She discovers she is one of the Fae, creatures of legend and folklore, who pass as humans while feeding off them secretly and in different ways, as they have for millennia. Relieved yet horrified to find out that she is not alone, Bo decides to take the middle path between the humans and the Fae while embarking on a personal mission to unlock the secrets of her origin.</p><p>With the help of her human sidekick, Kenzi, and Dyson, a sexy police detective, Bo takes on a challenge every week helping a Fae or human client who comes to her to solve a mystery, or to right a wrong.</p>",
-        "image": {
-          "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/137.jpg",
-          "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/137.jpg"
-        }
-      },
-      {
-        "id": 14,
-        "url": "http://www.tvmaze.com/shows/14/continuum",
-        "name": "Continuum",
-        "language": "English",
-        "status": "Ended",
-        "runtime": 60,
-        "premiered": "2012-05-27",
-        "officialSite": "http://www.showcase.ca/Continuum",
-        "weight": 84,
-        "webChannel": null,
-        "image": {
-          "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/184.jpg",
-          "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/184.jpg"
-        },
-        "summary": "<p><b>Continuum </b>is a one-hour police drama centered on Kiera Cameron, a regular cop from 65 years in the future who finds herself trapped in present day Vancouver. She is alone, a stranger in a strange land, and has eight of the most ruthless criminals from the future, known as Liber8, loose in the city.</p><p>Lucky for Kiera, through the use of her CMR (cellular memory recall), a futuristic liquid chip technology implanted in her brain, she connects with Alec Sadler, a seventeen-year-old tech genius. When Kiera calls and Alec answers, a very unique partnership begins.</p><p>Kiera's first desire is to get \"home.\" But until she figures out a way to do that, she must survive in our time period and use all the resources available to her to track and capture the terrorists before they alter history enough to change the course of the future. After all, what's the point of going back if the future isn't the one you left?</p>"
-      },
-      {
-        "id": 15,
-        "name": "Constantine",
-        "language": "English",
-        "url": "http://www.tvmaze.com/shows/15/constantine",
-        "weight": 87,
-        "webChannel": null,
-        "officialSite": "https://www.nbc.com/constantine",
-        "runtime": 60,
-        "summary": "<p>Based on the wildly popular comic book series \"Hellblazer\" from DC Comics, seasoned demon hunter and master of the occult John Constantine is armed with a ferocious knowledge of the dark arts and a wickedly naughty wit. He fights the good fight - or at least he did. With his soul already damned to hell, he's decided to abandon his campaign against evil until a series of events thrusts him back into the fray, and he'll do whatever it takes to protect the innocent. With the balance of good and evil on the line‎, <b>Constantine </b>will use his skills to travel the country, find the supernatural terrors that threaten our world and send them back where they belong. After that, who knows... maybe there's hope for him and his soul after all.</p>",
-        "image": {
-          "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/154.jpg",
-          "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/154.jpg"
-        }
+      "summary": "<p><b>Continuum </b>is a one-hour police drama centered on Kiera Cameron, a regular cop from 65 years in the future who finds herself trapped in present day Vancouver. She is alone, a stranger in a strange land, and has eight of the most ruthless criminals from the future, known as Liber8, loose in the city.</p><p>Lucky for Kiera, through the use of her CMR (cellular memory recall), a futuristic liquid chip technology implanted in her brain, she connects with Alec Sadler, a seventeen-year-old tech genius. When Kiera calls and Alec answers, a very unique partnership begins.</p><p>Kiera's first desire is to get \"home.\" But until she figures out a way to do that, she must survive in our time period and use all the resources available to her to track and capture the terrorists before they alter history enough to change the course of the future. After all, what's the point of going back if the future isn't the one you left?</p>"
+    },
+    {
+      "id": 15,
+      "name": "Constantine",
+      "language": "English",
+      "url": "http://www.tvmaze.com/shows/15/constantine",
+      "weight": 87,
+      "webChannel": null,
+      "officialSite": "https://www.nbc.com/constantine",
+      "runtime": 70,
+      "summary": "<p>Based on the wildly popular comic book series \"Hellblazer\" from DC Comics, seasoned demon hunter and master of the occult John Constantine is armed with a ferocious knowledge of the dark arts and a wickedly naughty wit. He fights the good fight - or at least he did. With his soul already damned to hell, he's decided to abandon his campaign against evil until a series of events thrusts him back into the fray, and he'll do whatever it takes to protect the innocent. With the balance of good and evil on the line‎, <b>Constantine </b>will use his skills to travel the country, find the supernatural terrors that threaten our world and send them back where they belong. After that, who knows... maybe there's hope for him and his soul after all.</p>",
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/0/154.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/0/154.jpg"
       }
-    ]
-  }
+    }
+  ]
+}

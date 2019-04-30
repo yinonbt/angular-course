@@ -4,15 +4,23 @@
 </h1>
 <form [formGroup]="showForm" (ngSubmit)="save()">
   <div>
-    <input type="text" formControlName="name" placeholder="Name" />
+    <label for="inputName" >Name: </label>
+    <input type="text" formControlName="name" id="inputName" placeholder="Name" />
   </div>
   <div>
+      <label>Url: </label>
     <input type="text" formControlName="url" placeholder="Url" />
   </div>
   <div>
+      <label>Language: </label>
     <input type="text" formControlName="language" placeholder="Language" />
   </div>
   <div>
+      <label>Weight: </label>
+    <input type="text" formControlName="weight" placeholder="Weight" />
+  </div>
+  <div>
+      <label >Runtime: </label>
     <input type="number" formControlName="runtime" placeholder="Runtime" />
   </div>
   <div>
@@ -21,6 +29,7 @@
     </div>
   </div>
   <div>
+      <label >Summary: </label>
     <textarea col="70" formControlName="summary"></textarea>
   </div>
   <div formGroupName="image">
