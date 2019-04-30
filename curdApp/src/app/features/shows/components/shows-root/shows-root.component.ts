@@ -12,30 +12,29 @@ export class ShowsRootComponent implements OnInit {
   shows: Observable<Show[]>;
   selectedShow: Show;
 
-  constructor(private showsService: ShowsService) {
-    this.shows = this.showsService.getAll();
-  }
-
-  ngOnInit() {
-  }
-
-  onSelectShowRequested($event) {
-
-  }
-
-  async onSaveRequested(item: Show) {
-    await this.showsService.update(item); 
-    this.refresh();
-    this.selectedShow = null;
+  onSelectShowRequested(s: Show) {
+    this.selectedShow = s;
   }
 
   async onDeleteRequested(item: Show) {
-    await this.showsService.delete(item.id); 
-    this.refresh();
+    //  this.showsService.delete(item.id).then().catch()
+    try {
+      await this.showsService.delete(item.id);
+      this.selectedShow = null;
+    } catch (error) {
+
+    }
+  }
+  async onSaveRequested(item: Show) {
+    await this.showsService.update(item);
     this.selectedShow = null;
   }
+  constructor(private showsService: ShowsService) {
+    this.shows = this.showsService.shows$;
+    this.showsService.loadAllShows();
 
-  refresh() {
-    throw new Error("Method not implemented.");
+  }
+
+  ngOnInit() {
   }
 }

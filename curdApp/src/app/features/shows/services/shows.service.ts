@@ -9,30 +9,36 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ShowsService {
-  delete(id: any) {
-    throw new Error("Method not implemented.");
-  }
-  private showsSubject: BehaviorSubject<Show[]> = new BehaviorSubject<Show[]>([]);
+  private showsSubject = new BehaviorSubject<Show[]>([]);
+
   get shows$():Observable<Show[]> {
     // Observable is father of BehaviorSubject so AsObservable is not needed
     return this.showsSubject;
   }
 
-  update(item: Show) {
-    const url = `${environment.apiUrl}shows/${item.id}`;
-    return this.http.put<Show>(url, item).pipe(tap(o => {this.loadAllShows();}))
+  delete(showId: number) : Promise<any> {
+    const url = `${environment.apiUrl}shows/${showId}`;
+    return this.http.delete<any>(url)
+      .pipe(tap(o => {
+        this.loadAllShows();
+      })).toPromise();
   }
 
-  constructor(private http: HttpClient) { }
+  update(item: Show): Promise<Show> {
+    const url = `${environment.apiUrl}shows/${item.id}`;
+    return this.http.put<Show>(url, item).pipe(tap(o => {
+      this.loadAllShows();
+    })).toPromise();
+
+  }
 
   loadAllShows() {
     const url = `${environment.apiUrl}shows`;
     this.http.get<Show[]>(url).subscribe(result => {
-      this.shows$.next(result);
+      this.showsSubject.next(result);
     });
+
   }
-  getAll(): Observable<Show[]> {
-    const url = `${environment.apiUrl}shows`;
-    return this.http.get<Show[]>(url);
-  }
+
+  constructor(private http: HttpClient) { }
 }

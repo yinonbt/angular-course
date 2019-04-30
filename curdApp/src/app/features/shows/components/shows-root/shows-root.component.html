@@ -1,4 +1,6 @@
-<app-shows-list [shows]="shows | async" (selectShowRequested)="onSelectShowRequested($event)"
-  (deleteRequested)="onDeleteRequested($event)">
-</app-shows-list>
-<div style="clear:both"></div>
+<marquee>TExt in marquee</marquee>
+<app-shows-list (selectShowRequested)="onSelectShowRequested($event)" [shows]="shows | async"></app-shows-list>
+<div style="clear: both;" *ngIf="selectedShow">
+  <app-show-edit (deleteRequested)="onDeleteRequested($event)" [show]="selectedShow"
+    (saveRequested)="onSaveRequested($event)"></app-show-edit>
+</div>

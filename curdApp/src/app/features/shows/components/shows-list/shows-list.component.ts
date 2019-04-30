@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Show } from '../../model/show';
 import { Subscription, Subject, BehaviorSubject, Observable } from 'rxjs';
 import { ShowsService } from '../../services/shows.service';
@@ -9,15 +9,32 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
   templateUrl: './shows-list.component.html',
   styleUrls: ['./shows-list.component.scss']
 })
-export class ShowsListComponent implements OnInit, OnDestroy {
+export class ShowsListComponent implements OnChanges{
+  
   searchTermChanged = new BehaviorSubject<string>('');
-  @Input() shows: Show[];
-  @Output() selectShowRequested;
-  showsAfterFilter$: Observable<Show[]>;
+
+  @Input()
+  shows: Show[];
+
+  // showsAfterFilter$: Observable<Show[]>;
+  showsAfterFilter: Show[];
+
+  @Output()
+  selectShowRequested = new EventEmitter<Show>();
+
   constructor() {
-    this.showsAfterFilter$ = 
-    this.searchTermChanged.pipe(debounceTime(200), distinctUntilChanged(), 
-    map(keyword => { return this.shows.filter(show => show.name.indexOf(keyword) !== -1); }));
+    // this.showsAfterFilter$ = this.searchTermChanged
+    //   .pipe(debounceTime(200),
+    //     map(x => x.trim()),
+    //     distinctUntilChanged(),
+    //     map(keyword => {
+    //       return this.shows.filter(show => show.name.indexOf(keyword) !== -1);
+    //     }));
+  }
+
+  ngOnChanges(): void {
+    console.log('shows Input param: ', this.shows);
+    this.showsAfterFilter = this.shows;
   }
 
   filterShows(val: string) {
@@ -25,10 +42,6 @@ export class ShowsListComponent implements OnInit, OnDestroy {
   }
 
   onSelected(s: Show) {
-
+    this.selectShowRequested.emit(s);
   }
-  ngOnInit() {
-  }
-
-  ngOnDestroy() { }
 }

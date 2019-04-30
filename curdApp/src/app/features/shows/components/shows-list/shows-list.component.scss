@@ -1,12 +1,21 @@
 .show {
-    border-radius: 10px;
+    border-radius: 9px;
     padding: 5px;
-    width: 200px;
-    height: 300px;
+    width: 100px;
+    height: 150px;
     float: left;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+h3{
+    text-align: center;
+}
+.show>div {
+    text-align: center;
+
 }
 
 .show img {
-    margin: auto 0px;
-    
+    width: 60px;
 }
