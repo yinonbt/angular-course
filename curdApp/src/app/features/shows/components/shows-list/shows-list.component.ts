@@ -9,33 +9,39 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
   templateUrl: './shows-list.component.html',
   styleUrls: ['./shows-list.component.scss']
 })
-export class ShowsListComponent implements OnChanges{
+export class ShowsListComponent implements OnChanges, OnInit {
   
   searchTermChanged = new BehaviorSubject<string>('');
 
   @Input()
   shows: Show[];
 
-  // showsAfterFilter$: Observable<Show[]>;
-  showsAfterFilter: Show[];
+  showsAfterFilter$: Observable<Show[]>;
+  // showsAfterFilter: Show[];
 
   @Output()
   selectShowRequested = new EventEmitter<Show>();
   showSelected: Show;
 
   constructor() {
-    // this.showsAfterFilter$ = this.searchTermChanged
-    //   .pipe(debounceTime(200),
-    //     map(x => x.trim()),
-    //     distinctUntilChanged(),
-    //     map(keyword => {
-    //       return this.shows.filter(show => show.name.indexOf(keyword) !== -1);
-    //     }));
+    this.showsAfterFilter$ = this.searchTermChanged
+      .pipe(debounceTime(400),
+        map(x => x.trim()),
+        distinctUntilChanged(),
+        map(keyword => {
+          console.log('keyword is: ', keyword);
+          console.log('shows after filter: ', this.shows.filter(show => show.name.indexOf(keyword) !== -1));
+          return this.shows.filter(show => show.name.indexOf(keyword) !== -1);
+        }));
   }
 
   ngOnChanges(): void {
     console.log('shows Input param: ', this.shows);
-    this.showsAfterFilter = this.shows;
+    // this.showsAfterFilter = this.shows;
+  }
+
+  ngOnInit() {
+
   }
 
   filterShows(val: string) {

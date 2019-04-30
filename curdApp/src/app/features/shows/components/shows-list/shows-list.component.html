@@ -1,8 +1,9 @@
 <input type="search" #searchInput (input)="filterShows(searchInput.value)" />
 
 <div>
-  <div *ngFor="let show of showsAfterFilter" class="show" (click)="onSelected(show)"
-    [ngClass]="{'show-selected':show.id === showSelected?.id}" appVisibleInMouse="pink">
+  <!-- <div *ngFor="let show of showsAfterFilter" class="show" (click)="onSelected(show)"
+    [ngClass]="{'show-selected':show.id === showSelected?.id}" appVisibleInMouse="pink"> -->
+    <div *ngFor="let show of showsAfterFilter$ | async" class="show" (click)="onSelected(show)">
     <h3>
       {{show.name}}
     </h3>
