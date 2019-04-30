@@ -2,13 +2,13 @@
 
 <div>
   <div *ngFor="let show of showsAfterFilter" class="show" (click)="onSelected(show)"
-    [ngClass]="{'show-selected':show.id === showSelected?.id}">
+    [ngClass]="{'show-selected':show.id === showSelected?.id}" appVisibleInMouse="pink">
     <h3>
       {{show.name}}
     </h3>
     <div>
       <img [src]="show.image.medium" />
     </div>
-    <div [innerHTML]="show.summary"></div>
+    <!-- <p [innerHTML]="show.summary"></p> -->
   </div>
 </div>
