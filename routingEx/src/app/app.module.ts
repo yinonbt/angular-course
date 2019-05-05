@@ -9,6 +9,7 @@ import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
 import { LoginComponent } from './login/login.component';
 import { OnlyUsersComponent } from './only-users/only-users.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OnlyUsersComponent } from './only-users/only-users.component';
     Child1Component,
     Child2Component,
     LoginComponent,
-    OnlyUsersComponent
+    OnlyUsersComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
