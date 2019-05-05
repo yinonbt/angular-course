@@ -11,6 +11,8 @@ import { OnlyUsersComponent } from '../only-users/only-users.component';
 import { AuthService } from '../services/auth/auth.service';
 import { UsersResolverService } from '../services/users/users-resolver.service';
 import { AboutComponent } from '../about/about.component';
+import { KefelBoardComponent } from '../kefel-board/kefel-board.component';
+import { CalcResultComponent } from '../calc-result/calc-result.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canDeactivate: [CanDeactivateService] },
@@ -29,7 +31,9 @@ const routes: Routes = [
     path: 'users', component: OnlyUsersComponent, canActivate: [AuthService],
     resolve: { users: UsersResolverService }
   },
-  { path: 'about', component: AboutComponent }];
+  { path: 'about', component: AboutComponent },
+  { path: 'kefel', component: KefelBoardComponent },
+  { path: 'result/:xParam/:yParam', component: CalcResultComponent },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), CommonModule],

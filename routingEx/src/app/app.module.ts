@@ -10,6 +10,8 @@ import { Child2Component } from './child2/child2.component';
 import { LoginComponent } from './login/login.component';
 import { OnlyUsersComponent } from './only-users/only-users.component';
 import { AboutComponent } from './about/about.component';
+import { KefelBoardComponent } from './kefel-board/kefel-board.component';
+import { CalcResultComponent } from './calc-result/calc-result.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AboutComponent } from './about/about.component';
     Child2Component,
     LoginComponent,
     OnlyUsersComponent,
-    AboutComponent
+    AboutComponent,
+    KefelBoardComponent,
+    CalcResultComponent
   ],
   imports: [
     BrowserModule,
