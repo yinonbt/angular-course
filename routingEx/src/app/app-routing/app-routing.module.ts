@@ -33,7 +33,9 @@ const routes: Routes = [
   },
   { path: 'about', component: AboutComponent },
   { path: 'kefel', component: KefelBoardComponent },
-  { path: 'result/:xParam/:yParam', component: CalcResultComponent },];
+  { path: 'result/:xParam/:yParam', component: CalcResultComponent },
+  { path: 'admin', loadChildren: './../admin/admin.module#AdminModule' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), CommonModule],
