@@ -15,7 +15,7 @@ export class CanDeactivateService implements CanDeactivate<CanGoOut>{
       return component.can();
     }
 
-    console.log('inside CanDeactivateService', currentRoute.url)
+    console.log('component does not implements CanGoOut contract', currentRoute.url)
     return true;
   }
   
